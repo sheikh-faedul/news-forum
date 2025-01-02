@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Forum</title>
+
+      <!-- daisyUI and tailwind link -->
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- fonst awesome -->
+      <script src="https://kit.fontawesome.com/625b42e47d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+            <div class="lg:flex justify-between my-5">
+                <h1 class="font-bold text-5xl">ReTro</h1>
+                <div class="flex">
+                    <div class="tooltip" data-tip="Home">
+                        <button class="btn btn-active fa-solid fa-pen rounded-full"></button>
+                      </div>  
+                    <div class="tooltip" data-tip="Article">
+                        <button class="btn btn-active fa-solid fa-pen rounded-full"></button>
+                      </div>  
+                    <div class="tooltip" data-tip="Add new">
+                        <button class="btn btn-active fa-solid fa-pen rounded-full"></button>
+                      </div>  
+                     <div><button class="btn btn-primary rounded-lg">Sing In</button></div>
+                </div>
+            </div>
+         </header>
+
+         <main>
+            <!-- banner part -->
+             <div class="bg-[url(images/bgbanner.png)] bg-no-repeat bg-slate-600 h-screen rounded-2xl p-5 lg:flex justify-around items-center">
+                <div>
+                    <h1 class="text-white font-bold text-6xl">Welcome to the <br> <span class="text-slate-400">ReTro </span>Forum</h1>
+                    <p class="text-slate-100 text-xl">share your favorite opinion and win <br> forum coffee mug</p>
+                    <input type="text" placeholder="Search here" class="input input-bordered w-full max-w-xs" />
+                    <button class="btn btn-active btn-primary">Search</button>
+                </div>
+                <div class="bg-slate-100  text-2xl rounded-xl p-6">
+                    <h5>Registered user  01</h5>
+                    <h5>Forum 05</h5>
+                    <h5>Topics 01</h5>
+                    <h5>Replies 01</h5>
+                </div>
+             </div>
+    
+             <!-- discussion part -->
+            <section>
+                <div class="text-center my-5">
+                    <h1 class="font-bold text-3xl">Let's Discuss</h1>
+                    <p>Yes you can run unit test and view the results directly within the app.The <br> integrated testing features allow for a streamlined</p>
+                </div>
+                 <div class=" flex flex-col lg:flex-row justify-between ">
+                    <div id="discussion" class="">
+                    
+                    </div>
+                    <div id="markedArea" class="flex gap-x-14">
+                        <h3 class="font-semibold text-xl">Title</h3>
+                        <p>marked <span>(0)</span></p> 
+                    </div>
+                 </div>
+            </section>
+            <div class="bg-slate-600 flex flex-col items-center rounded-md p-5 my-8 lg:flex-row">
+                <div class="text-slate-100">
+                    <h1 class="text-3xl font-bold">Join Our Forum </h1>
+                    <p>Share your favourite opinion and win forum coffee mug! Yes,you can run unit test and view the results directly within the app.</p>
+                    <button class="btn btn-active btn-primary rounded-3xl text-xl">Register Now</button>
+                </div>
+                <div>
+                    <img src="images/joinforum.png" alt="" srcset="">
+                </div>
+            </div>
+            <!-- latest post section -->
+             <section>
+                <div class="text-center my-5">
+                    <h1 class="text-3xl font-bold my-2">Latest Post</h1>
+                    <p>Yes,you can run unit test and view the results ditectly within the app, The integrated testing allow for a streamline</p>
+                </div>
+                <div id="postArea">
+                    <div>
+                        <div class="card bg-base-100 w-96 shadow-xl">
+                            <figure>
+                              <img
+                                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes" />
+                            </figure>
+                            <div class="card-body">
+                                <h4>Date</h4>
+                                <h2 class="card-title">Shoes!</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                              </div>
+                              <div class="flex mx-8">
+                                 <div>
+                                    <img src="" alt="" srcset="">
+                                 </div>
+                                <div>
+                                    <h2>author</h2>
+                                    <p>unknown</p>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                </div>
+              </section>
+         </main>
+         <ftooter class="text-center my-5">
+            <h1 class="text-3xl font-bold my-2">ReTro</h1>
+            <p>copyright &copy 2024</p>
+            <div>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </footer>
+        <!-- scrit link -->
+<script src="js/app.js"></script>
+</body>
+</html>
