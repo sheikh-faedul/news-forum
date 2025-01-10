@@ -51,8 +51,36 @@ const loadPost =async()=>{
   displayPost(data);
 }
 const displayPost = (post)=>{
+  const latestPost = document.getElementById('postArea');
  post.forEach(post => {
-    console.log(post);
+    const postCard = document.createElement('div');
+     
+    postCard.innerHTML=`
+        <div class = "flex">
+                        <div class="card bg-base-100 w-96 shadow-xl">
+                            <figure>
+                              <img
+                                src="${post.cover_image} "
+                                alt="Shoes" />
+                            </figure>
+                            <div class="card-body">
+                              <h4>Date: ${post.author?.posted_date}</h4>
+                                <h2 class="card-title">${post.title}</h2>
+                                <p>${post.description} </p>
+                              </div>
+                              <div class="flex mx-8">
+                                 <div>
+                                    <img src="${post.profile_image}" alt="" srcset="">
+                                 </div>
+                                <div>
+                                    <h2>Author:${post.author.name}</h2>
+                                    <p>Designatio:${post.author?.designation}</p>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+    `
+    latestPost.appendChild(postCard);
  });
 }
 
