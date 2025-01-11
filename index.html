@@ -36,8 +36,8 @@
                 <div>
                     <h1 class="text-white font-bold text-6xl">Welcome to the <br> <span class="text-slate-400">ReTro </span>Forum</h1>
                     <p class="text-slate-100 text-xl">share your favorite opinion and win <br> forum coffee mug</p>
-                    <input type="text" placeholder="Search here" class="input input-bordered w-full max-w-xs" />
-                    <button class="btn btn-active btn-primary">Search</button>
+                    <input id="search-field" type="text" placeholder="Search here" class="input input-bordered w-full max-w-xs" />
+                    <button onclick="searchButton()" class="btn btn-active btn-primary">Search</button>
                 </div>
                 <div class="bg-slate-100  text-2xl rounded-xl p-6">
                     <h5>Registered user  01</h5>
@@ -53,6 +53,9 @@
                     <h1 class="font-bold text-3xl">Let's Discuss</h1>
                     <p>Yes you can run unit test and view the results directly within the app.The <br> integrated testing features allow for a streamlined</p>
                 </div>
+                 <div class=" flex justify-center ">
+                    <span id="loading-spinner" class="hidden loading loading-bars loading-lg"></span>
+                 </div>
                  <div class=" flex flex-col lg:flex-row justify-between ">
                     <div id="discussion" class="">
                     

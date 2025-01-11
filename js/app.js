@@ -1,12 +1,12 @@
-const loadData =async ()=>{
-    const res =await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+const loadData =async (searchField)=>{
+  const res =await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchField}`);
     const data =await res.json();
     const discuss = (data.posts);
     displayDisucuss(discuss);
 }
 const displayDisucuss = (discusses)=>{
     const discussionArea = document.getElementById('discussion');
-    
+    discussionArea.textContent='';
     discusses.forEach(discusses => {
        const discussCard = document.createElement('div')
       
@@ -40,9 +40,9 @@ const displayDisucuss = (discusses)=>{
         `
         
         discussionArea.appendChild(discussCard);
-       
+        
     });
-   
+    loadigSpinner(false);
 }
 
 const loadPost =async()=>{
@@ -84,5 +84,22 @@ const displayPost = (post)=>{
  });
 }
 
-loadData();
+const searchButton = ()=>{
+  loadigSpinner(true);
+  const searchField = document.getElementById('search-field').value;
+  loadData(searchField);
+}
+
+const loadigSpinner = (isLoading)=>{
+  const spinner = document.getElementById('loading-spinner');
+  if(isLoading){
+    spinner.classList.remove('hidden');
+  }
+  else{
+    spinner.classList.add('hidden');
+  }
+}
+
+
+ 
 loadPost();
