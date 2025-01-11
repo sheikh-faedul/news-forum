@@ -23,16 +23,16 @@ const displayDisucuss = (discusses)=>{
                              <div class="card-body">
                          <h4>${discusses.category}</h4>
                          <h4>Author:${discusses.author.name}</h4>
-                          <h2 class="card-title">${discusses.title}</h2>
+                          <h2 id="title" class="card-title">${discusses.title}</h2>
                           <p> ${discusses.description}</p>
                           <hr>
                           <div class="card-actions flex justify-around ">
                             <div class="flex gap-4">
                                 <h6>sms${discusses.comment_count}</h6>
-                                <h6>view${discusses.view_count}</h6>
+                                <h6 id="view">view${discusses.view_count}</h6>
                                 <h6>time${discusses.posted_time}</h6>
                             </div>
-                            <button class="btn btn-primary">Mark as read</button>
+                            <button onclick="marked()" class="btn btn-primary">Mark as read</button>
                           </div>
                         </div>
                         </div>
@@ -101,5 +101,35 @@ const loadigSpinner = (isLoading)=>{
 }
 
 
+const marked=()=>{
+const markContainer = document.getElementById('markedArea');
+const div = document.createElement('div');
+div.classList.add("flex");
+div.classList.add("gap-6");
+
+const tittle= document.getElementById('title').innerText;
+const views=document.getElementById('view').innerText;
+
+const h1 = document.createElement('h4');
+const h2 = document.createElement('h6');
+
+h1.innerText= tittle;
+h2.innerText= views;
+
+div.appendChild(h1);
+div.appendChild(h2);
+markContainer.appendChild(div);
+
+const marks = getConvertedValue('marks');
+document.getElementById('marks').innerText=marks+1;
+
+
+}
+
+const getConvertedValue=(id)=>{
+  const value=document.getElementById(id).innerText;
+  const convertedValue =parseInt(value);
+  return convertedValue;
+}
  
 loadPost();
